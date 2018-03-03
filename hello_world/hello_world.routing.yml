@@ -4,6 +4,13 @@ hello_world:
         _controller: Drupal\hello_world\Controller\HelloWorldController::hello
     requirements:
         _permission: 'access content'
+hello_world.getdata:
+    path: /hello/world/getdata
+    defaults:
+        _controller: Drupal\hello_world\Controller\HelloWorldController::getdata
+    requirements:
+        _permission: 'access content'
+
 hello_world.contact_form:
   path: '/hello_world/form/contact'
   defaults:

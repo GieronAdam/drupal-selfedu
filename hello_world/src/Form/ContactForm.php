@@ -22,6 +22,11 @@ class ContactForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
+
+    $form['#action'] = '/hello/world/getdata';
+    $form['#method'] = 'post';
+
     $form['name'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Name'),
@@ -34,21 +39,22 @@ class ContactForm extends FormBase {
         '#description' => $this->t('E-mail'),
         '#weight' => '2',
     ];
-      $form['message'] = [
+    $form['message'] = [
           '#type' => 'textarea',
           '#title' => $this->t('Message'),
           '#description' => $this->t('Message'),
-          '#weight' => '2',
-      ];
-      $form['date'] = [
+          '#weight' => '3',
+    ];
+    $form['date'] = [
           '#type' => 'date',
           '#title' => $this->t('Date'),
           '#description' => $this->t('Date'),
-          '#weight' => '22',
-      ];
+          '#weight' => '4',
+    ];
     $form['submit'] = [
-      '#type' => 'submit',
-      '#value' => $this->t('Submit'),
+        '#type' => 'submit',
+        '#value' => $this->t('Submit'),
+        '#weight' => '5',
     ];
 
     return $form;
@@ -65,11 +71,9 @@ class ContactForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // Display result.
     foreach ($form_state->getValues() as $key => $value) {
       drupal_set_message($key . ': ' . $value);
     }
 
   }
-
 }
