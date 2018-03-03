@@ -40,6 +40,12 @@ class ContactForm extends FormBase {
           '#description' => $this->t('Message'),
           '#weight' => '2',
       ];
+      $form['date'] = [
+          '#type' => 'date',
+          '#title' => $this->t('Date'),
+          '#description' => $this->t('Date'),
+          '#weight' => '22',
+      ];
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Submit'),
