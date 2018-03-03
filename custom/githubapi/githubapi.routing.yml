@@ -1,0 +1,21 @@
+githubapi:
+  path: '/githubapi/index'
+  defaults:
+    _controller: '\Drupal\githubapi\Controller\IndexController::index'
+    _title: 'index'
+  requirements:
+    _permission: 'access content'
+githubapi.getdata:
+    path: '/githubapi/getdata'
+    defaults:
+        _controller: '\Drupal\githubapi\Controller\IndexController::getdata'
+    requirements:
+        _permission: 'access content'
+githubapi.search_form:
+  path: '/githubapi/form/search'
+  defaults:
+    _form: '\Drupal\githubapi\Form\SearchForm'
+    _title: 'SearchForm'
+  requirements:
+    _access: 'TRUE'
+  

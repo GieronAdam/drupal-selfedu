@@ -1,0 +1,15 @@
+<!-- Add you custom twig html here -->
+<div class="container">
+    <p>Repositories:</p>
+
+    {% for item in repositories %}
+        <ul>
+            <li><a href="{{ item.html_url }}" target="_blank">{{ item.name }}</a></li>
+            <li>{{ item.owner.login }}</li>
+            <li><img src="{{ item.owner.avatar_url }}" alt="{{ item.owner.avatar_url }}" width="80"></li>
+            <li><a href="https://gist.github.com/{{ item.owner.login }}" target="_blank">{{ item.owner.login }} Gists</a></li>
+        </ul>
+        <hr>
+    {% endfor %}
+
+</div>

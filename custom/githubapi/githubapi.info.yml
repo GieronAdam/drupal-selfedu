@@ -1,0 +1,5 @@
+name: 'GithubApi'
+type: module
+description: 'Simple Github Module'
+core: 8.x
+package: 'Custom'

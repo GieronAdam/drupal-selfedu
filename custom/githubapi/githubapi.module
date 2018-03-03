@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains githubapi.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function githubapi_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the githubapi module.
+        case 'help.page.githubapi':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Simple Github Module') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function githubapi_theme()
+{
+    return [
+        'githubapi' => [
+            'variables' => [
+                'repositories' => NULL,
+                'test_var' => NULL
+            ],
+        ],
+    ];
+}
