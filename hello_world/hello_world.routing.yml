@@ -1,0 +1,14 @@
+hello_world:
+    path: /hello/world
+    defaults:
+        _controller: Drupal\hello_world\Controller\HelloWorldController::hello
+    requirements:
+        _permission: 'access content'
+hello_world.contact_form:
+  path: '/hello_world/form/contact'
+  defaults:
+    _form: '\Drupal\hello_world\Form\ContactForm'
+    _title: 'ContactForm'
+  requirements:
+    _access: 'TRUE'
+  
