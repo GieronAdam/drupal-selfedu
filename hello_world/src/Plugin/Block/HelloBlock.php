@@ -2,6 +2,7 @@
 
 namespace Drupal\hello_world\Plugin\Block;
 
+use Drupal\hello_world\Controller\HelloWorldController as Hello;
 use Drupal\Core\Block\BlockBase;
 
 /**
@@ -12,16 +13,19 @@ use Drupal\Core\Block\BlockBase;
  *  admin_label = @Translation("Hello World"),
  * )
  */
-class HelloBlock extends BlockBase {
+class HelloBlock extends BlockBase
+{
 
-  /**
-   * {@inheritdoc}
-   */
-  public function build() {
-    $build = [];
-    $build['hello_block']['#markup'] = 'Some String';
+    /**
+     * {@inheritdoc}
+     */
+    public function build()
+    {
 
-    return $build;
-  }
+        $build = [];
+        $build['hello_block']['#markup'] = 'Some String';
+
+        return $build;
+    }
 
 }
